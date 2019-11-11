@@ -19,9 +19,8 @@ def get_tile_list():
     useLinks = []
     passageLinks = []
     for page in range(1,5):
-        if page != 1:
-            
-     	     url="http://www.en8848.com.cn/cet6/read/liujibidu100/index_{0}.html".format(str(page))
+        if page != 1: 
+     	    url="http://www.en8848.com.cn/cet6/read/liujibidu100/index_{0}.html".format(str(page))
             res = requests.get(url).content.decode("utf-8")
             soup = bs(res,"lxml")
             links = soup.select("a")
@@ -92,9 +91,6 @@ def write_to_file(filename,content):
             file.write("="*20)
             file.write("\n")
             print("write done: {0}/{1}".format(str(j),str(len(content))))
-            
-            
-            
     
 if __name__ == '__main__':   
         
